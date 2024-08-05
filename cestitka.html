@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        
+        body {
+            font-family: 'Lobster', cursive;
+            background-image: url('https://images.unsplash.com/photo-1550522667-09c9bdb293a1?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2VlfGVufDB8fDB8fHww'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Sakrij dio slike koji izlazi izvan vidnog područja */
+            position: relative;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.8); 
+            background: linear-gradient(135deg, #ff7e5f, #feb47b, #ff5f6d);            
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center; /* Tekst je centriran horizontalno */
+            box-shadow:  0 4px 8px rgba(255, 0, 0, 0.5); 
+            position: relative;
+            margin: 30px auto;
+            width: 50%;
+            z-index: 1; /* Postavi karticu iznad animirane slike */
+        }
+        
+        .card h1 {
+            color: #df3017;
+            margin: 0; /* Ukloni margine da bi h1 bio bliže vrhu */
+        }
+        
+        .card p {
+            font-size: 20px;
+            color: #555;
+        }
+        
+        .card:hover {
+            background: linear-gradient(135deg, #00c6ff, #0072ff, #00c6ff); /* Promeni boju pozadine na hover u tirkizne nijanse */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Intenzivnija senka pri hover */
+            transform: scale(1.1); /* Povećaj karticu pri hover */
+        }
+        
+        .animated-image {
+            position: absolute;
+            bottom: 0; /* Pozicioniraj sliku uz donju ivicu ekrana */
+            left: -300px; /* Početna pozicija slike izvan lijevog ruba ekrana */
+            width: 300px; /* Širina slike */
+            animation: moveImage 10s linear infinite;
+            z-index: 0; /* Pozicioniraj sliku ispod kartice */
+        }
+        
+        @keyframes moveImage {
+            0% {
+                left: -300px;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        #map {
+            position: absolute;
+            top: 20px; 
+            right: 20px; 
+            height: 200px; 
+            width: 200px;  
+            border: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Dodaj senku */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efekat prelaza */
+        }
+
+        #map:hover {
+            transform: scale(1.05); /* Povećava mapu kada se prelazi mišem */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Intenzivnija senka pri hover efektu */
+        }
+
+        audio {
+            position: absolute;
+            top: 5px; /* Razmak od vrha stranice */
+            left: 5px; /* Razmak od lijevog ruba stranice */
+            z-index: 2; /* Postavi audio player iznad svih ostalih elemenata */
+        }
+    </style>
+</head>
+<body>
+    <audio controls autoplay>
+        <source src="C:/Users/Iva Jakovljevic/Documents/mojeleto1.mp3" type="audio/mpeg">
+        Vaš preglednik ne podržava audio element.
+    </audio>
+    <img src="C:/Users/Iva Jakovljevic/Documents/jetskii.png" alt="PNG slika" class="animated-image">
+    <div class="card">
+        <h1>Miša i Iva</h1>
+        <p>ovako ćemo ti i ja uskoro!!</p>
+    </div>
+    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d412284.5455206967!2d27.635863530520336!3d36.16721135356083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14950af92e9b4fad%3A0x27eed014f85bd454!2sRhodes!5e0!3m2!1sen!2srs!4v1722893874641!5m2!1sen!2srs" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>
